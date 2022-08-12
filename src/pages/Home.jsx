@@ -17,7 +17,7 @@ function Home() {
           <Link to="/prime-numbers">Prime Numbers</Link>
         </li>
         <li class="list-group-item list-group-item-info">
-          This is a warning list group item
+        <Link to="/MultiplicationTable">Multiplication Table</Link>
         </li>
         <li class="list-group-item list-group-item-secondary">
           This is a info list group item

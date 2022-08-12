@@ -3,6 +3,8 @@ import { useState } from "react";
 
 function MultiplicationTable() {
   const [input, setInput] = useState("");
+  // Check if letter or null
+  if (isNaN(input) || )
 
   return (
     <div className="container p-5">
@@ -24,7 +26,7 @@ function MultiplicationTable() {
             rows="10"
             readOnly={true}
             placeholder="Output"
-            value={input}
+            value={MultiplicationTable()}
           />
         </div>
       </div>
