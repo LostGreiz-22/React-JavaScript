@@ -1,23 +1,31 @@
 import React, { useState } from "react";
 
-export default function MultiplicationTable() {
+export default function NumberRightTriangle() {
   const [input, setInput] = useState("");
-  const sequence = [];
 
-  const getMultiplicationTable = () => {
+  const generateRightTriangle = () => {
+    // Check if letter or null
     if (isNaN(input) || !input) {
       return (
         <h1 className="col-12 w-100 text-primary">Please enter a Number</h1>
       );
     }
 
-    // Create multiplication table
-    for (let i = 1; i <= 10; i++) {
-      sequence.push(i * input);
+    // input = 3
+    let total = "";
+    // total = " * * *"
+    const triangle = [];
+    // triangle = [" *", " * *", " * * *"]
+    for (let i = 1; i <= input; i++) {
+      total = total + " " + i;
+      // total = total.concat(" ", i);
+      triangle.push(total);
     }
 
-    return sequence.map((data) => (
-      <h1 className="col-12 w-100 text-primary">{data}</h1>
+    return triangle.map((data, index) => (
+      <h1 className="col-12 w-100 text-primary" key={index}>
+        {data}
+      </h1>
     ));
   };
 
@@ -35,9 +43,7 @@ export default function MultiplicationTable() {
             }}
           />
         </div>
-        <h1 className="col-12 w-100 text-primary">
-          {getMultiplicationTable()}
-        </h1>
+        {generateRightTriangle()}
       </div>
     </div>
   );

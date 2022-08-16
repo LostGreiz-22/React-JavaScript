@@ -1,17 +1,19 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
-export default function Strings() {
+export default function SumOfNatural() {
   const [input, setInput] = useState("");
 
-  const getReverseString = () => {
-    return input
-      .split("")
-      .reverse("")
-      .join("")
-      .split(" ")
-      .reverse("")
-      .join(" ");
+  const getSumOfNaturalNumbers = () => {
+    if (isNaN(input) || !input) {
+      return "Please enter a number";
+    }
+
+    let total = 0;
+    for (let i = 1; i <= input; i++) {
+      total = total + i;
+    }
+
+    return total;
   };
 
   return (
@@ -28,7 +30,9 @@ export default function Strings() {
             }}
           />
         </div>
-        <h1 className="col-12 w-100 text-primary">{getReverseString()}</h1>
+        <h1 className="col-12 w-100 text-primary">
+          {getSumOfNaturalNumbers()}
+        </h1>
       </div>
     </div>
   );
